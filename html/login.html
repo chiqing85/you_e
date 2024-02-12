@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>登录喵喵</title>
+    <link rel="stylesheet" href="../lib/RemixIcon_Fonts_v4.0.0/fonts/remixicon.css">
+    <link rel="stylesheet" href="../static/css/login.css">
+</head>
+<body>
+    <div class="win">
+       <div class="main">
+            <div class="login_wrap">
+                <div class="login">
+                    <div class="top">
+                        <div class="m_t_l">
+                            <span class="close"><i class="ri-close-line"></i></span>
+                            <span class="minimize"><i class="ri-subtract-line"></i></span>
+                        </div>
+                        <div class="m_t_r">
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="main-box">
+                        <div class="user_img">
+                            <img src="../static/img/logo202312122302.jpg" alt="" ondragstart="return false">
+                        </div>
+                        <div class="login-box">
+                            <div class="input-box">
+                                <div class="gorme-input">
+                                    <div class="input_ico">
+                                        <i class="ri-user-line"></i>
+                                    </div>
+                                    <input type="text" class="user_id" placeholder="YOU号/手机/邮箱…" name="name" dada_cont="账号不能为空…">
+                                </div>
+                            </div>
+        
+                            <div class="input-box">
+                                <div class="gorme-input">
+                                    <div class="input_ico">
+                                        <i class="ri-key-2-fill"></i>
+                                    </div>
+                                    <input type="password" class="user_paw" placeholder="请输入密码…" name="pas" dada_cont="密码不能为空…">
+                                </div>
+                            </div>
+                            <div class="input-box">
+                                <div class="gorme-input sub-int">
+                                    <a href="javascript:;" class="login_sub sub">登录</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main-booton">
+                        <a href="javascript:;" class="reg_log">注册帐号？</a>
+                    </div>
+                </div>
+                <div class="regi">
+                    <div class="top">
+                        <div class="m_t_l">
+                            <span class="close"><i class="ri-close-line"></i></span>
+                            <span class="minimize"><i class="ri-subtract-line"></i></span>
+                        </div>
+                        <div class="m_t_r">
+                            <span></span>
+                        </div>
+                    </div>
+                    <div class="main-box">
+                        <div class="user_img">
+                            <img src="../static/img/logo202312122302.jpg" alt="" ondragstart="return false">
+                        </div>
+                        <div class="login-box">
+                            <!-- <div class="input-box">
+                                <div class="gorme-input">
+                                    <div class="input_ico">
+                                        <i class="ri-smartphone-line"></i>
+                                    </div>
+                                    <input type="text" class="phone" placeholder="请输入手机号…" name="phone" dada_cont="手机号不能为空…">
+                                </div>
+                            </div> -->
+    
+                            <div class="input-box">
+                                <div class="gorme-input">
+                                    <div class="input_ico">
+                                        <i class="ri-mail-line"></i>
+                                    </div>
+                                    <input type="text" class="user_mail" placeholder="请输入邮箱号…" name="mail" dada_cont="邮箱号不能为空…">
+                                </div>
+                            </div>
+                            <div class="input-box">
+                                <div class="gorme-input">
+                                    <input type="text" class="verify" placeholder="输入验证码…" name="verify" dada_cont="验证码不能为空…">
+                                    <span class="send_mail_ico" title="发送验证码">
+                                        <i class="ri-chat-forward-line"></i>
+                                    </span>
+                                </div>
+                            </div>
+                            <div class="input-box">
+                                <div class="gorme-input">
+                                    <div class="input_ico">
+                                        <i class="ri-lock-password-line"></i>
+                                    </div>
+                                    <input type="password" class="setpas" placeholder="设置密码…" name="pas" dada_cont="密码不能为空…">
+                                </div>
+                            </div>
+                            
+                            <div class="input-box">
+                                <div class="gorme-input sub-int">
+                                    <a href="javascript:;" class="reg_sub sub">注册</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="main-booton">
+                        <a href="javascript:;" class="reg_log">登录？</a>
+                    </div>
+                </div>
+            </div>
+            <div class="quick">
+                <div class="top">
+                    <div class="m_t_l">
+                        <span class="close"><i class="ri-close-line"></i></span>
+                        <span class="minimize"><i class="ri-subtract-line"></i></span>
+                    </div>
+                    <div class="m_t_r"></div>
+                </div>
+                <div class="quick_box">
+                    <div class="main-box">
+                        <div class="user_img">
+                            <img src="../static/img/pic/6.jpg" alt="" ondragstart="return false" class="quick_info_img">
+                        </div>
+                    </div>
+                    <div class="nick">
+                        <h5></h5>
+                    </div>
+                    <div class="gorme-input quick-btn">
+                        <a href="javascript:;">一键登录</a>
+                    </div>
+                </div>
+                <div class="main-booton">
+                    <a href="javascript:;" class="pas_login">密码登录？</a>
+                </div>
+            </div>
+       </div>
+    </div>
+    <script src="../lib/jquery-2.2.3.min.js"></script>
+    <script src="../lib/crypto-js.js"></script>
+    <script src="../static/js/login.js"></script>
+</body>
+</html>

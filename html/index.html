@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>呦呦聊天</title>
+    <link rel="stylesheet" href="../lib/RemixIcon_Fonts_v4.0.0/fonts/remixicon.css">
+    <link rel="stylesheet" href="../static/css/app.css">
+</head>
+<body>
+    <div class="win">
+        <div class="banner"></div>
+        <div class="main">
+            <div class="top">
+                <div class="m_t_l">
+                    <span class="close"><i class="ri-close-line"></i></span>
+                    <span class="minimize"><i class="ri-subtract-line"></i></span>
+                    <span class="minimax">
+                        <i>
+                            <svg class="icon" style="width: .7em;height: .7em;vertical-align: middle;fill: currentColor;overflow: hidden;" viewBox="0 0 1024 1024" version="1.1" xmlns="http://www.w3.org/2000/svg" p-id="7522"><path d="M475.3408 850.5344h-266.24a37.2736 37.2736 0 0 1-37.2736-37.2736v-266.24a37.2736 37.2736 0 1 1 74.5472 0v228.9664h228.9664a37.2736 37.2736 0 0 1 0 74.5472zM830.3104 495.5648a37.2736 37.2736 0 0 1-37.2736-37.2736V229.3248h-228.9664a37.2736 37.2736 0 1 1 0-74.5472h266.24a37.2736 37.2736 0 0 1 37.2736 37.2736v266.24a37.2736 37.2736 0 0 1-37.2736 37.2736z" p-id="7523"></path></svg>
+                        </i>
+                    </span>
+                </div>
+                <div class="m_t_c">
+                    <h5>赵飞雪</h5>
+                </div>
+                <div class="m_t_r">
+                    <div class="shirt">
+                        <i class="ri-t-shirt-line"></i>
+                    </div>
+                    <div class="set">
+                        <i class="ri-settings-2-line"></i>
+                    </div>
+                    <div class="user_img">
+                        <div class="portrait">
+                            <img src="../static/img/yaoyao20231212.png" alt="">
+                        </div>
+                        <span class="user_state"></span>
+                    </div>
+                    <div class="portrait-box">
+                        <div class="item">
+                            <span class="line"></span>
+                            <div>在线</div>
+                        </div>
+                        <div class="item">
+                            <span class="busy"></span>
+                            <div>忙碌</div>
+                        </div>
+                        <div class="item">
+                            <span class="leave"></span>
+                            <div>离开</div>
+                        </div>
+                        <div class="item">
+                            <span class="stelth"></span>
+                            <div>隐身</div>
+                        </div>
+                    </div>
+                    <div class="info_cart">
+                        <div class="cart">
+                            <div class="cart_portrait">
+                                <img alt="">
+                            </div>
+                            <div class="cart_heard">
+                                <div>
+                                    <h3 class="nickname" contenteditable="true"></h3>
+                                </div>
+                                <span class="desc" contenteditable="true"></span>
+                            </div>
+                            <div class="cart_edit">
+                                <a href="javascript:;">编辑资料</a>
+                            </div>
+                        </div>
+                        <div class="cart_bottom">
+                            <div class="item">
+                                <div class="cart_ico">
+                                    <i class="ri-men-line"></i>
+                                </div>
+                                <span></span>
+                            </div>
+                            <div class="item">
+                                <div class="cart_ico">
+                                    <i class="ri-road-map-line"></i>
+                                </div>
+                                <span></span>
+                            </div>
+                            <div class="item">
+                                <div class="cart_ico">
+                                    <i class="ri-hourglass-line"></i>
+                                </div>
+                                <span></span>
+                            </div>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="main_box">
+                <div class="mb_l">
+                    <div class="friend">
+                        <div class="f_head">
+                            <span class="action"><i class="ri-chat-1-fill"></i></span>
+                            <span><i class="ri-user-2-fill"></i></span>
+                            <span><i class="ri-team-fill"></i></span>
+                            <span><i class="ri-search-line"></i></span>
+                        </div>
+                        <div class="friend_lists">
+                            <div class="friend_ui">
+                                <!-- 新消息列表 -->
+                                <div class="chat_list">
+                                    <div class="item action">
+                                        <div class="list_user_img">
+                                            <img src="../static/img/20230411204225.png" alt="">
+                                        </div>
+                                        <div class="list_user_info">
+                                            <div class="user_new_nt">
+                                                <span class="name">赵飞雪</span>
+                                                <span class="time">8:09</span>
+                                            </div>
+                                            <span class="user_new_chat">早上好，昨天跟你说的那个券现在……</span>
+                                        </div>
+                                    </div>
+        
+                                    <div class="item">
+                                        <div class="list_user_img">
+                                            <img src="../static/img/W]6GOUR17BIH_B$}SI~6TI4.bmp" alt="">
+                                        </div>
+                                        <div class="list_user_info">
+                                            <div class="user_new_nt">
+                                                <span class="name">朱琳</span>
+                                                <span class="time">18:25</span>
+                                            </div>
+                                            <span class="user_new_chat">世界的本质算是被你玩明白了</span>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 用户好友列表 -->
+                                <!-- 好友 -->
+                                <div class="friend_list">
+                                    <div class="group_itme">
+                                        <div class="group_header">
+                                            <div class="group_name">我的好友 <span>0/3</span></div>
+                                            <span class="group_ico"><i class="ri-arrow-right-s-line"></i></span>
+                                        </div>
+                                        <div class="friend_li">
+                                            <div class="item">
+                                                <div class="list_user_img">
+                                                    <img src="../static/img/pic/0.jpg" alt="">
+                                                </div>
+                                                <div class="list_user_info">
+                                                    <div class="user_new_nt">
+                                                        <span class="name">安静。就好</span>
+                                                    </div>
+                                                    <span class="user_new_chat">世界是镜子 你笑它便笑</span>
+                                                </div>
+                                            </div>
+                                            <div class="item">
+                                                <div class="list_user_img">
+                                                    <img src="../static/img/M372H26YR0VCS5L7`@EV}Y.bmp" alt="">
+                                                </div>
+                                                <div class="list_user_info">
+                                                    <div class="user_new_nt">
+                                                        <span class="name">起点-培根</span>
+                                                    </div>
+                                                    <span class="user_new_chat">新书期要注意每天更新4000字呀！尤其是刚签约的作者，划重点。</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="item">
+                                                <div class="list_user_img">
+                                                    <img src="../static/img/pic/14.jpg" alt="">
+                                                </div>
+                                                <div class="list_user_info">
+                                                    <div class="user_new_nt">
+                                                        <span class="name">枫叶</span>
+                                                    </div>
+                                                    <span class="user_new_chat">最美好的笑</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- 集会列表 -->
+                                <div class="meeting_list">
+                                    <div class="item">
+                                        <div class="list_meeting_img">
+                                            <img src="../static/img/pic/21.jpg" alt="">
+                                        </div>
+                                        <span class="miss">1</span>
+                                        <div class="list_meeting_name">
+                                            <span class="meeting_name">golang交流会</span>
+                                        </div>
+                                    </div>
+
+                                    <div class="item">
+                                        <div class="list_meeting_img">
+                                            <img src="../static/img/pic/35.jpg" alt="">
+                                        </div>
+                                        <div class="list_meeting_name">
+                                            <span class="meeting_name">佣金宝官方1群</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- 搜索 -->
+                                <div class="add_scarch">
+                                    <div class="add_friend_meeting">
+                                        <span>
+                                            <i class="ri-user-add-line"></i>
+                                        </span>
+                                        <div>查找更多朋友或集会</div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="mb_r">
+                    <div class="chat_cent y_scroll">
+                        <div class="new_chat_con y_s_content">
+                            <div class="new_time">
+                                <span></span>
+                                <span></span>
+                                <span>2023-12-06 19:01</span>
+                            </div>
+                            <div class="new_chat_item">
+                                <!-- 群里面要带用记户昵称 -->
+                                <!-- 一对一聊天，不用显示对方昵称 -->
+                                <div class="list_user_img">
+                                    <img src="../static/img/20230411204225.png" alt="">
+                                </div>
+
+                                <div class="list_user_info">
+                                    <span class="user_new_chat">早上好，昨天跟你说的那个券现在价格多少了？</span>
+                                </div>
+                            </div>
+
+                            <div class="new_chat_item is_yours">
+                                <!-- 群里面要带用记户昵称 -->
+                                <!-- 一对一聊天，不用显示对方昵称 -->
+                                <div class="list_user_img">
+                                    <img src="../static/img/yaoyao20231212.png" alt="">
+                                </div>
+
+                                <div class="list_user_info">
+                                    <span class="user_new_chat">美女好，等我查一下哈~</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="snd-text">
+                        <div class="editor-header">
+                            <div class="editor_h_l">
+                                <span class="emotion"><i class="ri-emotion-happy-line"></i></span>
+                                <!-- <span><i class="ri-image-2-line"></i></span>
+                                <span><i class="ri-folder-2-line"></i></span>
+                                <span><i class="ri-t-box-line"></i></span> -->
+                                <span class="screen"><i class="ri-screenshot-line"></i></span>
+                            </div>
+                            <div class="chat_history">
+                                <span><i class="ri-time-line"></i></span>
+                            </div>
+                        </div>
+                        <div class="editor_box">
+                            <div class="editor_con" contenteditable="true"></div>
+                            <span class="prompt">请输入会话…</span>
+                        </div>
+                        <div class="send_box">
+                            <i class="ri-send-plane-line"></i>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
+<script src="../lib/jquery-2.2.3.min.js"></script>
+<script src="../static/js/app.js"></script>
