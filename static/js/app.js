@@ -13,7 +13,10 @@ class app{
         target = null,
         th = this,
         cart = null,
-        CartEdsc = null
+        CartEdsc = null,
+        recorder = null,
+        chunks = [],
+        audio
         $(document).on("click", ".user_state", e=> { // 显示用户状态
             $(".portrait-box").show()
             return false
@@ -337,6 +340,68 @@ class app{
             window.electronAPI.maxApp("win_max")
         }).on("click", ".close" , () => {   // 关闭窗口
             window.electronAPI.closeApp("win_login")
+        }).on("mousedown", ".mic", async ( e) => {  // 按住，发送语音
+            let t = e.currentTarget
+            if( $(t).find("div").is(".tip")) $(".tip").remove()
+            $(t).find("i").removeClass("ri-mic-line").addClass("ri-stop-circle-line")
+            let media = navigator.mediaDevices.getUserMedia({audio:{
+                noiseSuppression:true, // 降噪
+                echoCancellation:true,  // 回音消除
+                channelCount:1, // 通道数
+                volume:1, // 从0（静音）到1(音量最大) 取值
+                sampleRate: 16000, // 采样率
+                sampleSize:16, // 采样点大小位数
+            }})
+            chunks = []
+            media.then( stream => {
+                recorder = new MediaRecorder( stream)
+                recorder.ondataavailable = ( e) => {
+                    if( e.data.size > 0) chunks.push( e.data );
+                }
+                recorder.onstop = () => {
+                    if( chunks.length > 0) {
+                        let blob = new Blob(chunks,{type:"audio/webm"})
+                        // let file = new window.File([blob],"record.webm");
+                       let  html = `<div><span class="chat_voice" data-v="${URL.createObjectURL(blob)}"><i class="ri-play-circle-fill"></i></span><span class="wave"><i class="ri-pulse-line"></i></span></div>`
+                       this.NewChat( html)
+                    } else {
+                        th.tip("哦，没录到声音…", false)
+                    }
+                    // recorder.release()
+                    recorder = null
+                }
+                recorder.start()
+            }).catch( err => {
+                this.tip( "未检测到麦克风…", false)
+            })
+        }).on("mouseover", ".mic>i", e => {
+            let t = e.currentTarget
+            if(  !$(t).siblings().is(".tip")) $(t).parent("span").append( `<div class="tip">按住说话…</div>`);
+        }).on("mouseup", ".mic>i", e => {
+            let t = e.currentTarget
+            $(t).removeAttr("class").addClass("ri-mic-line")
+            try {
+                recorder.stop()
+                // recorder.release()
+                recorder.stream.getAudioTracks().forEach(function(track){track.stop()});
+            } catch (e) {
+               console.log( e )
+            }
+        }).on("mouseleave", ".mic>i", e => {
+            let t = e.currentTarget
+            if( $(t).siblings().is(".tip")) $(".tip").remove()
+        }).on("click", ".chat_voice", e => {    // 点击播放录音
+            let t = e.currentTarget,
+            url = $(t).attr("data-v")
+            audio = ""
+            // (window.URL || webkitURL).createObjectURL( url )
+            audio = new Audio( url )
+            audio.autoplay = true;
+            $(t).find("i").removeClass("ri-play-circle-fill").addClass( "ri-stop-circle-line")
+            // ri-stop-circle-line
+            audio.addEventListener("ended", () => {
+                $(t).find("i").removeClass("ri-stop-circle-line").addClass( "ri-play-circle-fill")
+            })
         }).on("click", () => {  // 冒泡
             // 
             if( $(".face_box").is(":visible")) {
@@ -426,7 +491,7 @@ class app{
         }
     }
     // 模态弹出窗口
-    tip = ( n , b = true) => {  
+    tip = ( n , b = true) => {
         let html =""
         if( b == false) {
             html = `<i class="ri-close-circle-fill error"></i>`
@@ -436,7 +501,7 @@ class app{
         let not = document.createElement("div"),
         t = 80;
         not.className = "notice-box"
-        not.innerHTML =html +=  n;
+        not.innerHTML = html +=  n;
         t += 45 * $("div.notice-box").length
         let i = ($(".win").append( not ), $("div.notice-box:last"))
         i.addClass("is_show")
