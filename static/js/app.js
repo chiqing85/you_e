@@ -372,6 +372,7 @@ class app{
                 }
                 recorder.start()
             }).catch( err => {
+                $(t).find("i").removeAttr("class").addClass("ri-mic-line")
                 this.tip( "未检测到麦克风…", false)
             })
         }).on("mouseover", ".mic>i", e => {
